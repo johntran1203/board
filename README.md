@@ -5,8 +5,7 @@
 OC Charcuterie Board 
 
 ## Project Description
-
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and/or functionality.
+My project is where people can order a Charcuterie Board. My friend start a side hustle on instagram and facbook marketplace and I decide to make them a website. 
 
 ## Wireframes
 
@@ -31,15 +30,23 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 #### MVP 
 *These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Create application and deploy it on Heroku and Netlify
+- Application will have CRUD funtionaloty
+- Render appiycation in browser
+- Build a back End with python using the Flask framework, exposing RESTful JSON endpoints
+- build 3 tables and 1 association between your tables
+- build at least 8 components
+- style my application, use flexbox or Grid and implement media queries
+
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- have a people feedback post on my website
+- A constant  CSS changing them during the four season
+- Add a hamburger menu
+- Add a second API
+- maybe a subscribe email to our newsletter or promotion
 
 ## Timeframes
 
@@ -49,16 +56,29 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Planning | H | 3hrs|  | |
+| Backend setup | H | 4hrs|  | |
+| Adding Form | H | 3hrs| | |
+| Working with API | H | 3hrs|  |  |
+| some seed data | H | 3hrs|  | |
+| Render Posts |H | 2hrs|  | |
+| update Posts |H | 2hrs|  | |
+| delete Posts |H | 2hrs|  | |
+| Test all CRUD| H | 3hrs|  | |
+| Connect fronend and backend| H | 3hrs|  | |
+| Debug| H | 3hrs|  | |
+| Style each component| H | 3hrs|  | |
+| Responsiveness| H | 3hrs|  | |
+| Search filter| H | 1hrs|  | |
+| animation and CSS| H | 4hrs|  | |
+| Total | H | 42hrs|  |  |
 
 ## SWOT Analysis
 
-#### Strengths:
+#### Strengths: Front-end and CSS
 
-#### Weaknesses:
+#### Weaknesses: Connecting the front-end and the back-end
 
-#### Opportunities:
+#### Opportunities: To work more with Python
 
-#### Threats:
+#### Threats: Time management and the fear of not graduating

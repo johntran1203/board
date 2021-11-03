@@ -8,6 +8,7 @@ from db import DATABASE
 class Board(Model):
     board_name = CharField()
     name = CharField()
+    price = IntegerField()
     created_at = DateTimeField(default=datetime.datetime.now)
 
     # connect it to the database

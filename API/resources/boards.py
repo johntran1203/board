@@ -3,20 +3,18 @@ from peewee import DoesNotExist
 from playhouse.shortcuts import model_to_dict
 
 from board import Board
+# from customer import Customer
+# from order import Order
 
 board = Blueprint('boards', __name__, url_prefix="/api/v1/boards")
 
 @board.route('/', methods=['GET'])
 def get_all_boards():
     try:
-        # iterate through all dogs in the database and turn each instance of the Dog model into a dog dictionary
         boards = [model_to_dict(board) for board in Board.select()]
-        # send that stuff to the user!
-        return jsonify(boards), 200
-    # worst case scenario, if Dog doesn't exist
+        return jsonify(boards), 200 
     except DoesNotExist:
-        # tell the user it can't find that model
-        return jsonify(error='Error getting the Dog resource!'), 500
+        return jsonify(error='Error getting the Board resource!'), 500
 
 @board.route('/<int:id>', methods=['GET'])
 def get_one_board(id):
@@ -26,7 +24,7 @@ def get_one_board(id):
         print(board.__dict__)
         return jsonify(model_to_dict(board)), 200
     except DoesNotExist:
-        return jsonify(error='Error getting the Dog resource!'), 500
+        return jsonify(error='Error getting the Board resource!'), 500
 
 @board.route('/<id>', methods=["PUT"])
 def update_board(id):
@@ -41,8 +39,6 @@ def update_board(id):
 @board.route('/', methods=['POST'])
 def create_board():
     body = request.get_json()
-
-
     board = Board.create(**body)
     board_dict = model_to_dict(board)
     return jsonify(board_dict), 201

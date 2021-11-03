@@ -1,6 +1,6 @@
 from peewee import *
 
-DATABASE = PostgresqlDatabase('dogs')
+DATABASE = PostgresqlDatabase('boards')
 
 
 def initialize(tables):

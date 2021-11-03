@@ -5,8 +5,9 @@ from playhouse.shortcuts import model_to_dict
 
 order = Blueprint('orders', __name__, url_prefix="/orders")
 
-# from customer import Customer
+from customer import Customer
 from order import Order
+from board import Board
 
 @order.route('/', methods=['GET'])
 def get_all_orders():

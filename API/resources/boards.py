@@ -3,10 +3,8 @@ from peewee import DoesNotExist
 from playhouse.shortcuts import model_to_dict
 
 from board import Board
-# from customer import Customer
-# from order import Order
 
-board = Blueprint('boards', __name__, url_prefix="/api/v1/boards")
+board = Blueprint('boards', __name__, url_prefix="/boards")
 
 @board.route('/', methods=['GET'])
 def get_all_boards():
@@ -49,3 +47,4 @@ def delete_board(id):
         .where(Board.id == id)
         .execute())
     return jsonify(message="Board successfully deleted!!"), 200
+

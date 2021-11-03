@@ -1,11 +1,15 @@
 from flask import Flask, g
 from flask_cors import CORS
+from customer import Customer
 
 from db import DATABASE, initialize
 
 from board import Board
+from order import Order
 
 from resources.boards import board
+from resources.orders import order
+from resources.customers import customer
 
 DEBUG = True
 PORT = 8000
@@ -32,10 +36,12 @@ def index():
 CORS(board, origins=['http://localhost:3000'], supports_credentials=True)
 
 app.register_blueprint(board)
+app.register_blueprint(order)
+app.register_blueprint(customer)
 
 if __name__ == '__main__':
     print("I'm running app.py!")
-    initialize([Board])
+    initialize([Board, Customer, Order])
     app.run(debug=DEBUG, port=PORT)
 
 

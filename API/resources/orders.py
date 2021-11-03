@@ -8,6 +8,14 @@ order = Blueprint('orders', __name__, url_prefix="/orders")
 # from customer import Customer
 from order import Order
 
+@order.route('/', methods=['GET'])
+def get_all_orders():
+    try:
+        orders = [model_to_dict(order) for order in Order.select()]
+        return jsonify(orders), 200 
+    except DoesNotExist:
+        return jsonify(error='Error getting the Board resource!'), 500
+
 @order.route('/<int:board_id>', methods=["POST"])
 
 def add_order(board_id):

@@ -9,7 +9,7 @@ from customer import Customer
 
 # how to set up a m:m
 class Order(Model):
-    customer = ForeignKeyField(Customer, backref="orders")
+    # customer = ForeignKeyField(Customer, backref="orders")
     board = ForeignKeyField(Board, backref='orders')
     created_at = DateTimeField (default=datetime.datetime.now)
 

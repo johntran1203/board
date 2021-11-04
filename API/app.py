@@ -15,6 +15,8 @@ DEBUG = True
 PORT = 8000
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
+CORS(board, origins=['http://localhost:3000'], supports_credentials=True)
 
 @app.before_request
 def before_request():
@@ -33,7 +35,6 @@ def after_request(response):
 def index():
     return 'hello!', 200
 
-CORS(board, origins=['http://localhost:3000'], supports_credentials=True)
 
 app.register_blueprint(board)
 app.register_blueprint(order)

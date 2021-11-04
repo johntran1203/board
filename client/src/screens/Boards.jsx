@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { getAllBoards } from '../services';
+import { Link } from 'react-router-dom';
 
 
 const Boards = (props) => {
@@ -12,7 +13,8 @@ const Boards = (props) => {
     }, [])
     
     return (
-        <section>
+        <div>
+            <section>
             <h1>Hello</h1>
             {boards.map((board, index) => (
                 <div key={index}>
@@ -20,8 +22,10 @@ const Boards = (props) => {
                     <h4>{board.price}</h4>
                 </div>
             ))}
-        
         </section>
+        
+        </div>
+        
     );
 };
 

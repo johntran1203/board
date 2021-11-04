@@ -11,7 +11,7 @@ const AddBoard = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newBoard = {
-            name,
+            board_name: name,
             price,
         };
         await createBoard(newBoard);
@@ -31,9 +31,9 @@ const AddBoard = () => {
             <label htmlFor="price">Price:</label>
             <input
                 id="price"
-                type="text"
+                type="number"
                 value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                onChange={(e) => setPrice(e.target.valueAsNumber)}
                 required
             />
             <button type="submit">Create Board</button>

@@ -23,7 +23,7 @@ app.secret_key = os.environ.get('SECRET') or 'ednededdnededdneddypok'
 
 origins=['http://localhost:3000']
 
-if 'DATABASE_URL' in os.enivron:
+if 'DATABASE_URL' in os.environ:
     initialize([Board, Customer, Order])
     app.config['SESSION_COOKIE_SECURE'] = True
     app.config['SESSION_COOKIE_HTTPONLY'] = False

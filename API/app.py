@@ -1,5 +1,7 @@
 from flask import Flask, g
 from flask_cors import CORS
+import os
+
 from customer import Customer
 
 from db import DATABASE, initialize
@@ -14,9 +16,21 @@ from resources.customers import customer
 DEBUG = True
 PORT = 8000
 
+
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
-CORS(board, origins=['http://localhost:3000'], supports_credentials=True)
+
+app.secret_key = os.environ.get('SECRET') or 'ednededdnededdneddypok'
+
+origins=['http://localhost:3000']
+
+if 'DATABASE_URL' in os.enivron:
+    initialize([Board, Customer, Order])
+    app.config['SESSION_COOKIE_SECURE'] = True
+    app.config['SESSION_COOKIE_HTTPONLY'] = False
+    app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+    origins.append(os.environ.get('CLIENT_URL'))
+
+CORS(app, origins=origins, supports_credentials=True)
 
 @app.before_request
 def before_request():
@@ -39,6 +53,8 @@ def index():
 app.register_blueprint(board)
 app.register_blueprint(order)
 app.register_blueprint(customer)
+
+
 
 if __name__ == '__main__':
     print("I'm running app.py!")

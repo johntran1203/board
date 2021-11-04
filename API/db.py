@@ -1,6 +1,14 @@
 from peewee import *
+import os
+from playhouse.db_url import connect
 
-DATABASE = PostgresqlDatabase('boards')
+if 'DATABASE_URL' in os.environ:
+    DATABASE = connect(os.environ.get
+    ('DATABASE_URL'))
+else:
+    DATABASE = PostgresqlDatabase('boards')
+
+
 
 
 def initialize(tables):

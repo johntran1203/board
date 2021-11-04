@@ -4,6 +4,7 @@ import Home from "./screens/Home";
 import Boards from "./screens/Boards";
 import './App.css';
 import AddBoard from "./screens/AddBoard";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           </Route>
         </main>
       </Switch>
+      <Footer />
     </div>
   );
 }

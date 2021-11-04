@@ -20,6 +20,7 @@ const Boards = (props) => {
                     <h4>{board.price}</h4>
                 </div>
             ))}
+        
         </section>
     );
 };

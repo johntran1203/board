@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { StyledNav } from "../styled/Nav.styled";
 
+
 const Nav = () => {
   return (
     <StyledNav>

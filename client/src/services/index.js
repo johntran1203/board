@@ -17,9 +17,10 @@ export const defaultRoute = async () => {
 } 
 
 // an exportable async function that gets all boards (apiURL/boards/)
-export const getAllBoardss = async () => {
+export const getAllBoards = async () => {
   try {
     const response = await axios.get(`${apiURL}/boards/`);
+    
     return response.data;
   } catch (error) {
     console.error(error.message);
@@ -34,3 +35,36 @@ export const createBoard = async (newBoard) => {
     console.error(error.message);
   }
 }
+
+export const getBoard = async(id) => {
+  try {
+    await axios.get(`${apiURL}/boards/${id}`)
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export const deleteBoard = async(id) => {
+  try {
+    await axios.delete(`${apiURL}/boards/${id}`)
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export const createCustomer = async (newCustomer) => {
+  try {
+    await axios.post(`${apiURL}/customers/`, newCustomer);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export const getAllCartoons = async () => {
+  try {
+    const response = await axios.get(`${apiURL}/cartoons/`);
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+} 

@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import { StyledNav } from "../styled/Nav.styled";
 
 const Nav = () => {
   return (
-    <nav>
+    <StyledNav>
       <Link to="/">Home</Link>
-    </nav>
+      <Link to="/boards">Menu</Link>
+      <Link to="/newBoard">Add a Board!</Link>
+      <Link to="/order">Order</Link>
+    </StyledNav>
   );
 };
 

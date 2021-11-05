@@ -8,7 +8,7 @@ const Nav = () => {
       <Link to="/">Home</Link>
       <Link to="/boards">Menu</Link>
       <Link to="/newBoard">Add a Board!</Link>
-      <Link to="/order">Order</Link>
+      <Link to="/edit">Edit</Link>
     </StyledNav>
   );
 };

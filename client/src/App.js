@@ -4,7 +4,9 @@ import Home from "./screens/Home";
 import Boards from "./screens/Boards";
 import './App.css';
 import AddBoard from "./screens/AddBoard";
+import Orders from "./screens/Orders";
 import Edit from "./screens/Edit";
+
 import Footer from "./components/Footer";
 
 function App() {
@@ -22,9 +24,12 @@ function App() {
           <Route path="/newBoard">
             <AddBoard />
           </Route>
-          <Route path='/Edit'>
+          <Route path='/edit'>
             <Edit />
           </Route>
+          <Route path='/orders'>
+            <Orders />
+            </Route>
         </main>
       </Switch>
       <Footer />

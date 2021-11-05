@@ -9,6 +9,7 @@ const Nav = () => {
       <Link to="/boards">Menu</Link>
       <Link to="/newBoard">Add a Board!</Link>
       <Link to="/edit">Edit</Link>
+      <Link to="/orders">Order</Link>
     </StyledNav>
   );
 };

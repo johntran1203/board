@@ -68,3 +68,21 @@ export const getAllCartoons = async () => {
     console.error(error.message);
   }
 } 
+
+export const getAllOrders = async () => {
+  try {
+    const response = await axios.get(`${apiURL}/orders/`);
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export const addOrder = async (newOrder) => {
+  try {
+    const response = await axios.post(`${apiURL}/orders/`, newOrder);
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}

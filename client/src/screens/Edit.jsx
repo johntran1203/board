@@ -56,7 +56,7 @@ const Edit = (props) => {
             price
         }
         console.log(updatedBoard, 'first')
-        await updateBoard(updatedBoard)
+        await updateBoard(selectedBoard.id, updatedBoard)
 
     }
 

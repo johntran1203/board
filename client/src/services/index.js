@@ -51,13 +51,15 @@ export const deleteBoard = async(id) => {
     console.error(error.message);
   }
 }
-export const updateBoard = async(id) => {
+export const updateBoard = async(id, edit) => {
   try {
-    await axios.put(`${apiURL}/boards/${id}`)
+    const response = await axios.put(`${apiURL}/boards/${id}`, edit)
+    return response.data
   } catch (error) {
     console.error(error.message);
   }
 }
+
 export const createCustomer = async (newCustomer) => {
   try {
     await axios.post(`${apiURL}/customers/`, newCustomer);
@@ -65,15 +67,6 @@ export const createCustomer = async (newCustomer) => {
     console.error(error.message);
   }
 }
-
-export const getAllCartoons = async () => {
-  try {
-    const response = await axios.get(`${apiURL}/cartoons/`);
-    return response.data;
-  } catch (error) {
-    console.error(error.message);
-  }
-} 
 
 export const getAllOrders = async () => {
   try {

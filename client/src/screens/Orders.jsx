@@ -9,10 +9,10 @@ const Orders = () => {
 
     const history = useHistory();
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        getAllOrders().then((fetchedOrders) => setOrders(fetchedOrders));
-    }, [])
+    //     getAllOrders().then((fetchedOrders) => setOrders(fetchedOrders));
+    // }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();

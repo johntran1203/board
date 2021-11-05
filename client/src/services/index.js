@@ -51,7 +51,13 @@ export const deleteBoard = async(id) => {
     console.error(error.message);
   }
 }
-
+export const updateBoard = async(id) => {
+  try {
+    await axios.put(`${apiURL}/boards/${id}`)
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 export const createCustomer = async (newCustomer) => {
   try {
     await axios.post(`${apiURL}/customers/`, newCustomer);

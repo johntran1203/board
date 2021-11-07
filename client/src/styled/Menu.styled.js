@@ -15,9 +15,17 @@ export const StyledMenu = styled.div`
       height: 300px;
       object-fit: cover;
     }
+  
+  @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    
+      .right {
+         padding-bottom: 4rem;
+      }
+    
   }
 `
-
 
 
 // f2f7f2

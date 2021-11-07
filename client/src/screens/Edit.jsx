@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { getAllBoards, deleteBoard, getBoard, updateBoard } from '../services';
 import { useHistory } from 'react-router';
-
+import { StyledEdited} from "../styled/Edit.styled";
 
 const Edit = (props) => {
     const history = useHistory()
@@ -58,7 +58,8 @@ const Edit = (props) => {
     }
 
     return (
-        <div>
+        <StyledEdited>
+            <div className='container'>
             <section>
                 <h1>Changes</h1>
                 {boards.map((board, index) => (
@@ -100,8 +101,8 @@ const Edit = (props) => {
                 />
                 <button type="submit">update Board</button>
             </form>
-
         </div>
+        </StyledEdited>
 
     );
 };

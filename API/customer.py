@@ -7,7 +7,7 @@ from db import DATABASE
 
 
 class Customer(Model):
-    name = CharField()
+    customer_name = CharField()
     created_at = DateTimeField(default=datetime.datetime.now)
 
     class Meta:

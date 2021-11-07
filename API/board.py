@@ -6,6 +6,7 @@ from db import DATABASE
 
 class Board(Model):
     board_name = CharField()
+    description = CharField()
     price = IntegerField()
     created_at = DateTimeField(default=datetime.datetime.now)
 

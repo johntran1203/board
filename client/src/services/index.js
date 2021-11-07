@@ -75,7 +75,7 @@ export const getCustomer = async(id) => {
   }
 }
 
-export const getAllcustomers = async () => {
+export const getAllCustomers = async () => {
   try {
     const response = await axios.get(`${apiURL}/customers/`);
     

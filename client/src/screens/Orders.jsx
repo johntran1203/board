@@ -77,10 +77,10 @@ const Orders = (props) => {
             <button type="submit">Create Order</button>
         </form> */}
         <section>
-            {/* <h1>Customer Orders:</h1>
-            {orders.map((order, index) => (
+            <h1>Customer Orders:</h1>
+            {/* {orders.map((order, index) => (
                 <div key={index}>
-                    <h3>{order.customer_order.customer_name} your order is {order.board.board_name}</h3>
+                    <h3>{order?.customer_order.customer_name} your order is {order?.board.board_name}</h3>
                     
                 </div>
             ))} */}

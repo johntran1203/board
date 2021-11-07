@@ -1,53 +1,35 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import emailjs from 'emailjs-com'
+import{ init } from 'emailjs-com';
+init("user_7iKgpfOHjiYsr9XwAVnXZ");
 
+// User ID
+// user_7iKgpfOHjiYsr9XwAVnXZ
+// Access Token
+// 4f3a58baaeaa5768e91df6b2560ebe75
 const Contact = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [comment, setComment] = useState("");
-
-    const history = useHistory();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const newComment = {
-            board_name: name,
-            
-           
-        };
-        // await createBoard(newComment);
-        history.push("/boards");
+        // e.preventDefault();
+        // const newBoard = {
+        //     board_name: name,
+        //     description,
+        //     price,
+        // };
+        // await createBoard(newBoard);
+        // history.push("/boards");
     };
     return (
         <div>
-            <h1>Contact</h1>
-            <p>Contact us with any questions or comments</p>
+            <h1>Contact Us</h1>
             <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-            />
-             <label htmlFor="email">Email:</label>
-            <input
-                id="email"
-                type='email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-            />
-            <label htmlFor="comment">Comments:</label>
-            <input
-                id="comment"
-                type="text"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                required
-            />
-             <button type="submit">Submit</button>
+                <label>Name</label>
+                <input type='text' name="name" />
+                <label>Email</label>
+                <input type="email" name="email"/>
+
+                <label>Message</label>
+                <textarea name='message' rows='4'/>
+                <input type='submit' value='send'/>
             </form>
         </div>
     );

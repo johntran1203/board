@@ -5,6 +5,7 @@ import { createBoard } from "../services";
 const AddBoard = () => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
 
     const history = useHistory();
 
@@ -12,6 +13,7 @@ const AddBoard = () => {
         e.preventDefault();
         const newBoard = {
             board_name: name,
+            description,
             price,
         };
         await createBoard(newBoard);
@@ -26,6 +28,14 @@ const AddBoard = () => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
+            />
+             <label htmlFor="description">Description:</label>
+            <input
+                id="description"
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 required
             />
             <label htmlFor="price">Price:</label>

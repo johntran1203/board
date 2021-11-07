@@ -19,6 +19,7 @@ const Boards = (props) => {
             {boards.map((board, index) => (
                 <div key={index}>
                     <h3>{board.board_name}</h3>
+                    <p>{board.description}</p>
                     <h4>{board.price}</h4>
                 </div>
             ))}

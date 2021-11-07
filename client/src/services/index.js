@@ -67,6 +67,23 @@ export const createCustomer = async (newCustomer) => {
     console.error(error.message);
   }
 }
+export const getCustomer = async(id) => {
+  try {
+    await axios.get(`${apiURL}/customers/${id}`)
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+export const getAllcustomers = async () => {
+  try {
+    const response = await axios.get(`${apiURL}/customers/`);
+    
+    return response.data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 
 export const getAllOrders = async () => {
   try {

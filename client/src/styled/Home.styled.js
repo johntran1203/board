@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 export const StyledHome = styled.div`
+    margin-bottom: 150px;
+
     .col {
        
         display: grid;

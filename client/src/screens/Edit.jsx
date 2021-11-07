@@ -4,8 +4,6 @@ import { getAllBoards, deleteBoard, getBoard, updateBoard } from '../services';
 import { useHistory } from 'react-router';
 
 
-
-
 const Edit = (props) => {
     const history = useHistory()
     const [boards, setBoards] = useState([]);
@@ -13,6 +11,7 @@ const Edit = (props) => {
     const [showForm, setShowForm] = useState(false)
     const [boardName, setBoardName] = useState('')
     const [price, setPrice] = useState('')
+    const [description, setDescription] = useState("");
     const [updateBoards, setUpdateBoards] = useState(false)
 
     useEffect(() => {
@@ -22,6 +21,7 @@ const Edit = (props) => {
     useEffect(() => {
         setBoardName(selectedBoard.board_name)
         setPrice(selectedBoard.price)
+        setDescription(selectedBoard.description)
     }, [selectedBoard])
 
     const handleDelete = async (e) => {
@@ -38,10 +38,6 @@ const Edit = (props) => {
         try {
             e.preventDefault();
 
-
-
-            // await updatePost(updateBoard);
-
         } catch (error) {
             console.error(error.message);
         }
@@ -53,6 +49,7 @@ const Edit = (props) => {
         const updatedBoard = {
             ...currentBoard,
             board_name: boardName,
+            description,
             price
         }
         console.log(updatedBoard, 'first')
@@ -67,6 +64,7 @@ const Edit = (props) => {
                 {boards.map((board, index) => (
                     <div key={index} id={board.id}>
                         <h3>{board.board_name}</h3>
+                        <p>{board.description}</p>
                         <h4>{board.price}</h4>
                         <button id={board.id} onClick={handleEdit}>Edit</button>
                         <button id={board.id} onClick={handleDelete}>Delete</button>
@@ -84,6 +82,14 @@ const Edit = (props) => {
                     onChange={(e) => setBoardName(e.target.value)}
                     required
                 />
+                  <label htmlFor="description">Description:</label>
+            <input
+                id="description"
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+            />
                 <label htmlFor="price">Price:</label>
                 <input
                     id="price"

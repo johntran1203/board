@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createBoard } from "../services";
+import { StyledCreated } from "../styled/Create.styled";
 
 const AddBoard = () => {
     const [name, setName] = useState("");
@@ -21,7 +22,9 @@ const AddBoard = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <StyledCreated>
+            <div className='container'>
+                <h1>Created Charcuterie Platter</h1>
             <label htmlFor="name">Name:</label>
             <input
                 id="name"
@@ -31,13 +34,16 @@ const AddBoard = () => {
                 required
             />
              <label htmlFor="description">Description:</label>
-            <input
-                id="description"
-                type="text"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                required
-            />
+            <textarea
+             id="description"
+             type="text"
+             value={description}
+             onChange={(e) => setDescription(e.target.value)}
+             required
+             >
+           
+               
+            </textarea>
             <label htmlFor="price">Price:</label>
             <input
                 id="price"
@@ -46,8 +52,12 @@ const AddBoard = () => {
                 onChange={(e) => setPrice(e.target.valueAsNumber)}
                 required
             />
-            <button type="submit">Create Board</button>
-        </form>
+           
+ 
+           <button onClick={handleSubmit}>Create Board</button>
+        </div>
+        
+        </StyledCreated>
     );
 };
 

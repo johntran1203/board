@@ -1,6 +1,7 @@
+import { StyledContact } from "../styled/Contact.styled";
 import emailjs from 'emailjs-com'
-import{ init } from 'emailjs-com';
-init("user_7iKgpfOHjiYsr9XwAVnXZ");
+// import{ init } from 'emailjs-com';
+// init("user_7iKgpfOHjiYsr9XwAVnXZ");
 
 // User ID
 // user_7iKgpfOHjiYsr9XwAVnXZ
@@ -19,7 +20,8 @@ const Contact = () => {
         // history.push("/boards");
     };
     return (
-        <div>
+        <StyledContact>
+            <div className= 'container'>
             <h1>Contact Us</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name</label>
@@ -29,9 +31,12 @@ const Contact = () => {
 
                 <label>Message</label>
                 <textarea name='message' rows='4'/>
-                <input type='submit' value='send'/>
+              
             </form>
-        </div>
+            <button>Submit</button>
+            </div>
+
+        </StyledContact>
     );
 };
 

@@ -60,11 +60,11 @@ const Edit = (props) => {
     return (
         <div>
             <section>
-                <h1>Hello</h1>
+                <h1>Changes</h1>
                 {boards.map((board, index) => (
                     <div key={index} id={board.id}>
                         <h3>{board.board_name}</h3>
-                        <p>{board.description}</p>
+                        <p>{board.description} </p>
                         <h4>{board.price}</h4>
                         <button id={board.id} onClick={handleEdit}>Edit</button>
                         <button id={board.id} onClick={handleDelete}>Delete</button>

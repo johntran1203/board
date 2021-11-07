@@ -15,12 +15,12 @@ const Boards = (props) => {
     return (
         <div>
             <section>
-            <h1>Hello</h1>
+            <h1>Our Menu</h1>
             {boards.map((board, index) => (
                 <div key={index}>
                     <h3>{board.board_name}</h3>
                     <p>{board.description}</p>
-                    <h4>{board.price}</h4>
+                    <h4>$ {board.price}</h4>
                 </div>
             ))}
         </section>

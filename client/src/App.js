@@ -6,6 +6,7 @@ import './App.css';
 import AddBoard from "./screens/AddBoard";
 import Orders from "./screens/Orders";
 import Edit from "./screens/Edit";
+import Contact from "./components/Contact";
 
 import Footer from "./components/Footer";
 
@@ -30,6 +31,9 @@ function App() {
           <Route path='/orders'>
             <Orders />
             </Route>
+          <Route path='/contact'>
+            <Contact />
+          </Route>
         </main>
       </Switch>
       <Footer />

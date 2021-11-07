@@ -10,13 +10,14 @@ const Orders = (props) => {
     const [newCustomer, setNewCustomer] = useState('')
     const history = useHistory();
     const [name, setName] = useState("");
-    const [order, setOrder] = useState("");
+    const [orders, setOrders] = useState("");
 
     useEffect(() => {
 
         getAllCustomers().then((fetchedCustomers) => setAllCustomers(fetchedCustomers));
+        getAllOrders().then((fetchedOrders) => setOrders(fetchedOrders));
     }, [])
-   
+   console.log(orders, 'first')
     const handleSubmit = async (e) => {
         e.preventDefault()
         const addCustomer = {
@@ -55,8 +56,8 @@ const Orders = (props) => {
                 </div>
             ))}
         </section>
-        <form>
-        {/* <form onSubmit={handleOrder}> */}
+        
+        {/* <form onSubmit={handleOrder}>
             <label htmlFor="name">Name:</label>
             <input
                 id="name"
@@ -69,12 +70,21 @@ const Orders = (props) => {
             <input
                 id="board"
                 type="text"
-                value={order}
-                onChange={(e) => setOrder(e.target.value)}
+                value={orders}
+                onChange={(e) => setOrders(e.target.value)}
                 required
             />
             <button type="submit">Create Order</button>
-        </form>
+        </form> */}
+        <section>
+            {/* <h1>Customer Orders:</h1>
+            {orders.map((order, index) => (
+                <div key={index}>
+                    <h3>{order.customer_order.customer_name} your order is {order.board.board_name}</h3>
+                    
+                </div>
+            ))} */}
+        </section>
         </div>
         
     );

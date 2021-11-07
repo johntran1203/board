@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import { getAllCustomers, createCustomer } from '../services';
+import { getAllCustomers, createCustomer, addOrder, getAllOrders } from '../services';
 import { useHistory } from 'react-router';
 
 
@@ -9,6 +9,8 @@ const Orders = (props) => {
     const [customers, setAllCustomers] = useState([]);
     const [newCustomer, setNewCustomer] = useState('')
     const history = useHistory();
+    const [name, setName] = useState("");
+    const [order, setOrder] = useState("");
 
     useEffect(() => {
 
@@ -23,6 +25,14 @@ const Orders = (props) => {
         await createCustomer(addCustomer)
         history.push("/boards");
     }
+    // const handleOrder = async (e) => {
+    //     e.preventDefault()
+    //     const addCustomer = {
+    //         customer_name: newCustomer,
+    //     }
+    //     await createCustomer(addCustomer)
+    //     history.push("/boards");
+    // }
     return (
         <div>
                <form onSubmit={handleSubmit}>
@@ -45,7 +55,26 @@ const Orders = (props) => {
                 </div>
             ))}
         </section>
-        
+        <form>
+        {/* <form onSubmit={handleOrder}> */}
+            <label htmlFor="name">Name:</label>
+            <input
+                id="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+            />
+             <label htmlFor="board">Which Board:</label>
+            <input
+                id="board"
+                type="text"
+                value={order}
+                onChange={(e) => setOrder(e.target.value)}
+                required
+            />
+            <button type="submit">Create Order</button>
+        </form>
         </div>
         
     );

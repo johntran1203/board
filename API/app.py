@@ -29,7 +29,7 @@ if 'DATABASE_URL' in os.environ:
     app.config['SESSION_COOKIE_SECURE'] = True
     app.config['SESSION_COOKIE_HTTPONLY'] = False
     app.config['SESSION_COOKIE_SAMESITE'] = 'None'
-    origins.append(os.environ.get('CLIENT_URL'))
+    # origins.append(os.environ.get('CLIENT_URL'))
 
 CORS(app, origins=origins, supports_credentials=True)
 

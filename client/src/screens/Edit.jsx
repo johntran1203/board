@@ -50,7 +50,7 @@ const Edit = (props) => {
             ...currentBoard,
             board_name: boardName,
             description,
-            price
+            price,
         }
         console.log(updatedBoard, 'first')
         await updateBoard(selectedBoard.id, updatedBoard)

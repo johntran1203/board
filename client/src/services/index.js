@@ -94,11 +94,14 @@ export const getAllOrders = async () => {
   }
 }
 
-export const addOrder = async (newOrder) => {
+export const addOrder = async (id, newOrder) => {
+  console.log(newOrder)
   try {
-    const response = await axios.post(`${apiURL}/orders/`, newOrder);
+    const response = await axios.post(`${apiURL}/orders/${id}`, newOrder);
     return response.data;
   } catch (error) {
     console.error(error.message);
   }
 }
+
+

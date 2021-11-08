@@ -6,8 +6,8 @@ export const StyledEdited = styled.div`
   .container {
     text-align: center;
     width: 90%;
-    width: 70%;
-    height: 80vh;
+
+
     margin: 0 auto;
     border-radius: 10px;
     margin-top: 2rem;
@@ -52,8 +52,7 @@ export const StyledEdited = styled.div`
 .container {
   text-align: center;
   width: 90%;
-  width: 70%;
-  height: 100vh;
+
   margin: 0 auto;
   border-radius: 10px;
   margin-top: 2rem;

@@ -27,7 +27,7 @@ const Orders = (props) => {
             customer_name: newCustomer,
         }
         await createCustomer(addCustomer)
-        history.push("/boards");
+        history.go(0)
     }
     const handleOrderSubmit = async (e) => {
         e.preventDefault()
@@ -40,11 +40,12 @@ const Orders = (props) => {
         // console.log(e)
         // console.log(add, 'check')
         await addOrder(boardId, add)
-        history.push("/boards");
+        history.go(0)
     }
     // await updateBoard(selectedBoard.id, updatedBoard)
     return (
         <StyledOrder>
+            <div className='container'>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="customer">Customer:</label>
                 <input
@@ -57,7 +58,7 @@ const Orders = (props) => {
                 <button type="submit">Create Customer</button>
             </form>
 
-            <section>
+            {/* <section>
                 {boards.map((board, index) => (
                     <div key={index}>
                         <h3>{board.board_name} id:{board.id}</h3>
@@ -65,8 +66,8 @@ const Orders = (props) => {
                         <h4>$ {board.price}</h4>
                     </div>
                 ))}
-            </section>
-            <section>
+            </section> */}
+            {/* <section>
                 <h1>Customer Name:</h1>
                 {customers.map((customer, index) => (
                     <div key={index}>
@@ -74,7 +75,7 @@ const Orders = (props) => {
 
                     </div>
                 ))}
-            </section>
+            </section> */}
 
             <form onSubmit={handleOrderSubmit}>
                 <label htmlFor="name">Customer:</label>
@@ -101,6 +102,7 @@ const Orders = (props) => {
                     </div>
                 ))}
             </section>
+            </div>
         </StyledOrder>
 
     );

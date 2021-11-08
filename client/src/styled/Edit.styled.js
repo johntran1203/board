@@ -7,11 +7,12 @@ export const StyledEdited = styled.div`
     text-align: center;
     width: 90%;
 
-
+    margin-bottom: 30px;
     margin: 0 auto;
     border-radius: 10px;
     margin-top: 2rem;
     background-color: rgba(210, 180, 140, 0.3);
+    
   }
 
   h1 {
@@ -46,6 +47,9 @@ export const StyledEdited = styled.div`
     }
   }
 
+  section{
+    padding-bottom: 40px;
+  }
   @media (max-width: 768px) {
     margin-bottom: 100px;
 

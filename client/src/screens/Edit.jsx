@@ -26,7 +26,7 @@ const Edit = (props) => {
 
     const handleDelete = async (e) => {
         await deleteBoard(e.target.id)
-        history.push('/')
+        history.go(0)
     }
 
 
@@ -54,6 +54,7 @@ const Edit = (props) => {
         }
         console.log(updatedBoard, 'first')
         await updateBoard(selectedBoard.id, updatedBoard)
+        history.go(0)
 
     }
 

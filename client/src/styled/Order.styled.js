@@ -12,7 +12,19 @@ export const StyledOrder = styled.div`
     border-radius: 10px;
     margin-top: 2rem;
     background-color: rgba(210, 180, 140, 0.3);
+
+    border: 5px solid #c33149;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     
+  }
+
+  form {
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 2rem;
   }
 
   h1 {
@@ -54,6 +66,8 @@ export const StyledOrder = styled.div`
     margin-bottom: 100px;
 
 .container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: 90%;
 

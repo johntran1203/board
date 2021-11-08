@@ -46,7 +46,7 @@ const Orders = (props) => {
     return (
         <StyledOrder>
             <div className='container'>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='form1'>
                 <label htmlFor="customer">Customer:</label>
                 <input
                     id="customer"
@@ -77,7 +77,7 @@ const Orders = (props) => {
                 ))}
             </section> */}
 
-            <form onSubmit={handleOrderSubmit}>
+            <form onSubmit={handleOrderSubmit} className='form2'>
                 <label htmlFor="name">Customer:</label>
                 <select>
                     {customers.map((customer) => (

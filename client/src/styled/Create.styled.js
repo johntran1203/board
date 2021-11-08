@@ -12,6 +12,7 @@ export const StyledCreated = styled.form`
     border-radius: 10px;
     margin-top: 2rem;
     background-color: rgba(210, 180, 140, 0.3);
+    border: 5px solid #c33149;
   }
 
   h1 {

@@ -6,7 +6,7 @@ export const StyledEdited = styled.div`
   .container {
     text-align: center;
     width: 90%;
-
+    border: 5px solid #c33149;
     margin-bottom: 30px;
     margin: 0 auto;
     border-radius: 10px;

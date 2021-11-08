@@ -6,6 +6,7 @@ import './App.css';
 import AddBoard from "./screens/AddBoard";
 import Orders from "./screens/Orders";
 import Edit from "./screens/Edit";
+import About from "./components/About";
 import Contact from "./components/Contact";
 
 import Footer from "./components/Footer";
@@ -30,7 +31,10 @@ function App() {
           </Route>
           <Route path='/orders'>
             <Orders />
-            </Route>
+          </Route>
+          <Route path='/about'>
+            <About />
+          </Route>
           <Route path='/contact'>
             <Contact />
           </Route>

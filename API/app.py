@@ -21,7 +21,7 @@ app = Flask(__name__)
 
 app.secret_key = os.environ.get('SECRET') or 'ednededdnededdneddypok'
 
-origins=['http://localhost:3000']
+origins=['http://localhost:3000', 'https://occharcuterie-board.netlify.app/']
 
 if 'DATABASE_URL' in os.environ:
     initialize([Board, Customer, Order])

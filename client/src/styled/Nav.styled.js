@@ -13,6 +13,17 @@ export const StyledNav = styled.nav`
         font-size: 20px;
         font-weight: bolder;
     }
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+
+        a {
+            display: block;
+            padding: 0.5rem;
+            
+        }
+    }
 `
 
 

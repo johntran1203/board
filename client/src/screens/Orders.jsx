@@ -27,7 +27,7 @@ const Orders = (props) => {
             customer_name: newCustomer,
         }
         await createCustomer(addCustomer)
-        history.go(0)
+        history.push('/')
     }
     const handleOrderSubmit = async (e) => {
         e.preventDefault()
@@ -40,7 +40,7 @@ const Orders = (props) => {
         // console.log(e)
         // console.log(add, 'check')
         await addOrder(boardId, add)
-        history.go(0)
+        history.push('/')
     }
     // await updateBoard(selectedBoard.id, updatedBoard)
     return (
